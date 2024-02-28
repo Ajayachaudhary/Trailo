@@ -1,0 +1,40 @@
+.class_admin{
+    position: relative; /* Positioning context for the pseudo-element */
+    display: inline-block; /* Allows height and width adjustments */
+    width: 80px; /* Fixed width */
+    height: 40px; /* Fixed height */
+    line-height: 40px; /* Center text vertically */
+    background-color: #d6d8db; /* Gray background */
+    border-radius: 30px; /* Rounded corners */
+    text-align: center; /* Center text horizontally */
+    overflow: hidden; /* Ensures nothing spills out of the border radius */
+}
+.class_admin::after {
+    content: "Admin"; /* Text to show on hover */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0; /* Hide text initially */
+    background-color: #d6d8db; /* Match background color */
+    color: #000; /* Text color */
+    transition: opacity 0.3s ease; /* Smooth transition for the hover effect */
+    display: flex;
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+}
+.class_admin:hover::after {
+    opacity: 1; /* Show text on hover */
+}
+
+.btn-outline-success {
+    color: black !important;
+    border: 1px solid #000 !important; /* Include 'solid' */
+    border-radius: 20px !important; /* Ensure override with !important */
+}
+.btn-outline-success:hover {
+    color: white !important; /* Change text color on hover */
+    background-color: gray !important; /* Gray background on hover */
+    border-color: #007bff !important; /* Blue border color on hover */
+}
