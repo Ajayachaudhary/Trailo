@@ -1,11 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
+
     {% include 'navbar.html' %}
+    <div class="container-fluid">
+        <div class="row mb-4">
+            <h2 class="col-12">Movies</h2>
+            {% for data in movie_images %}
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+                <div class="text-center poster">
+                    <img class="img-fluid video_play" data-id="{{data.id}}" src="{{ url_for('static', filename='image/movie/' + data.i_name)}}" alt="{{ data.name }}" style="width: 90%; height: 300px; object-fit: fill;">
+                    <p><b>{{ data.name }}</b></p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    
+        <div class="row">
+            <h2 class="col-12">Series</h2>
+            {% for data in series_images %}
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+                <div class="text-center poster">
+                    <img class="img-fluid video_play" data-id="{{data.id}}" src="{{ url_for('static', filename='image/series/' + data.i_name)}}" alt="{{ data.name }}" style="width: 90%; height: 300px; object-fit: fill;">
+                    <p><b>{{ data.name }}</b></p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    
 </body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="{{url_for('static',filename='js/main.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
 </html>
+
